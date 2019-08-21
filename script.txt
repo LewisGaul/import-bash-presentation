@@ -1,0 +1,42 @@
+1. Intro slide
+We're going to do a quickfire Python quiz, the way it's going to work is:
+ - I'll show a code snippet
+ - You decide if it's valid Python or not
+ - I'll count down
+ - Everyone raise their hand - open hand for valid, closed hand for invalid
+ - Follow your instinct, it'll have to be quick
+Note that I haven't customised the Python.
+
+2. f-strings
+First snippet - is it valid (open) or invalid (closed)?
+3, 2, 1, vote!
+Ok, this is valid - the first example was introduced in Python3.6 released 3 years ago, the second is a new debug f-string being released in 3.8 (in beta)
+
+3. Cancel threads
+Next question...
+3, 2, 1, vote!
+Not valid - you can't cancel threads. To achieve something like this you can use async-await or a library like curio.
+
+4. Generators
+... 3, 2, 1, vote!
+Not valid - the array in the 'if' part is lazy-evaluated.
+
+5. Positional-only arguments
+... 3, 2, 1, vote!
+Valid in Python3.8 - new positional-only arguments, useful when the names have no meaning.
+
+6. Walrus operator
+... 3, 2, 1, vote!
+Another new feature in Python3.8 - assignment operator (aka walrus operator). Caused a lot of disagreement in the Python community, leading to Guido stepping down as BDFL.
+
+7. Import bash
+... 3, 2, 1, vote!
+This works! But only because I hacked in an import hook silently when I imported 're' earlier on.
+ - My version of re.py is used because the cwd appears first in sys.path.
+ - My version of re.py temporarily removes the cwd from sys.path to ensure the real 're' is imported and returned.
+ - It then installs the import hook by appending to sys.meta_path.
+
+
+Everyone should be using Python3 by now! It was first released more than 10 years ago, and Python2 will only be supported until January 1st!
+
+
